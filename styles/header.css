@@ -227,7 +227,7 @@ and (max-width:700px) {
   }
 
   nav .pages {
-    background-color: #0000001A;
+    background-color: var(--color-navbar);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px); /* Safari support */
 
