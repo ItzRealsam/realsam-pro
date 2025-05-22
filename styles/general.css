@@ -83,6 +83,8 @@ body {
   overflow-x: hidden;
 }
 
+/* I need to sort out this bg-ellipse*/
+
 /* .bg-ellipse {
   position: absolute;
   top: 40%;
