@@ -1,0 +1,41 @@
+/* === TYPOGRAPHY === */
+h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(3.2rem, 5vw, 9.6rem);
+  line-height: clamp(4.8rem, 6.7vw, 12.8rem);
+  color: var(--color-text);
+}
+
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(3.2rem, 5vw, 6.4rem);
+  line-height: clamp(4.8rem, 6.7vw, 7.2rem);
+  color: var(--color-text);
+}
+
+h3 {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 5vw, 1.6rem);
+  line-height: clamp(2.4rem, 6.7vw, 3.2rem);
+  color: var(--color-accent);
+}
+
+h5 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: var(--color-text);
+}
+
+p {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 5vw, 1.6rem);
+  line-height: 2.8rem;
+  color: var(--color-grey);
+}
+
