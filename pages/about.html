@@ -1,102 +1,800 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio website for Sam, a frontend and UX designer" />
 
-  <title>Samuel Nwaokocha</title>
+  <title>realsam.pro</title>
 
   <!-- Dark theme: SVG + fallback PNG -->
-  <link rel="icon" href="../icons/favicon-dark-32x32.png" type="image/png" media="(prefers-color-scheme: dark)" />
-  <link rel="icon" href="../icons/realsam_logo_white.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="icons/favicon-dark-32x32.png" type="image/png" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="icons/realsam_logo_white.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
 
   <!-- Light theme: SVG + fallback PNG -->
-  <link rel="icon" href="../icons/favicon-light-32x32.png" type="image/png" media="(prefers-color-scheme: light)" />
-  <link rel="icon" href="../icons/realsam_logo_black.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
+  <link rel="icon" href="icons/favicon-light-32x32.png" type="image/png" media="(prefers-color-scheme: light)" />
+  <link rel="icon" href="icons/realsam_logo_black.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
 
   <!-- Fallback for all other cases -->
-  <link rel="icon" href="../icons/favicon-light-16x16.png" type="image/png" />
+  <link rel="icon" href="icons/favicon-light-16x16.png" type="image/png" />
 
   <!-- Linking Stylesheets -->
+  <link rel="stylesheet" href="../styles/cursor.css" />
   <link rel="stylesheet" href="../styles/fonts.css" />
-  <link rel="stylesheet" href="../styles/general.css">
+  <link rel="stylesheet" href="../styles/buttons.css" />  
+  <link rel="stylesheet" href="../styles/typography.css" />
+  <link rel="stylesheet" href="../styles/general.css" />
+  <link rel="stylesheet" href="../styles/header.css" />
+  <link rel="stylesheet" href="../styles/footer.css" />
+  <link rel="stylesheet" href="../styles/home.css" />
+
+  <!-- Linking Javascript -->
+  <script defer src="../script.js"></script> 
+ 
 </head>
 <body>
 
+  <div class="cursor"></div>
+
+  <div class="bg-ellipse"></div>
+
+  <!-- SVGs -->
+  <svg style="display: none;">
+    <symbol id="icon-sun" viewBox="0 0 24 24" fill="currentColor">
+      <circle cx="12" cy="12" r="5" />
+      <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+      </g>
+    </symbol>
+
+    <symbol id="icon-moon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M21.6 12.79C21.4427 14.4922 20.8039 16.1144 19.7582 17.4668C18.7126 18.8192 
+              17.3035 19.8458 15.6957 20.4265C14.0879 21.0073 12.348 21.1181 10.6795 
+              20.7461C9.01102 20.3741 7.48299 19.5345 6.27422 18.3258C5.06546 17.117 4.22594 
+              15.589 3.85391 13.9205C3.48187 12.252 3.59272 10.5121 4.17346 8.9043C4.7542 7.29651 
+              5.78083 5.88737 7.13321 4.84175C8.48559 3.79614 10.1078 3.15731 11.81 3C10.8134 
+              4.34827 10.3338 6.00945 10.4585 7.68141C10.5832 9.35338 11.3039 10.9251 12.4894 
+              12.1106C13.6749 13.2961 15.2466 14.0168 16.9186 14.1415C18.5906 14.2662 20.2517 
+              13.7866 21.6 12.79Z"/>
+    </symbol>
+
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5.79999 12H19.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12.8 5L19.8 12L12.8 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-behance" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <desc>
+        Behance Streamline Icon: https://streamlinehq.com
+      </desc>
+      <!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.-->
+      <path d="M9.713333333333333 11.234375c1.2985 -0.6206666666666667 1.9763333333333333 -1.5598333333333332 1.9763333333333333 
+              -3.0216666666666665 0 -2.882833333333333 -2.1478333333333333 -3.5851666666666664 -4.626416666666667 
+              -3.5851666666666664H0.24v14.471333333333334h7.0151666666666666c2.6296666666666666 0 5.100083333333333 -1.26175 
+              5.100083333333333 -4.20175 0 -1.8170833333333332 -0.8615833333333334 -3.1605 -2.6419166666666665 -3.66275ZM3.420916666666667 
+              7.097958333333333h2.984916666666667c1.1474166666666665 0 2.1805 0.32258333333333333 2.1805 1.6537499999999998 0 
+              1.2290833333333333 -0.8044166666666667 1.7231666666666667 -1.9395833333333332 1.7231666666666667h-3.225833333333333v-3.376916666666667Zm3.4014166666666665 
+              9.54275H3.420916666666667v-3.985333333333333h3.4667499999999998c1.400583333333333 0 2.2866666666666666 0.5839166666666666 
+              2.2866666666666666 2.0661666666666667 0 1.4618333333333333 -1.0575833333333333 1.9191666666666667 -2.352 1.9191666666666667Zm14.638749999999998 
+              -9.828583333333333H15.593333333333334v-1.4250833333333333h5.867749999999999v1.4250833333333333Zm2.2989166666666665 7.198916666666666c0 -3.09925 -1.813 
+              -5.683999999999999 -5.100083333333333 -5.683999999999999 -3.1931666666666665 0 -5.361416666666667 2.401 -5.361416666666667 5.545166666666667 0 3.2625833333333336 
+              2.0539166666666664 5.500249999999999 5.361416666666667 5.500249999999999 2.503083333333333 0 4.1241666666666665 -1.1269999999999998 4.9040833333333325 
+              -3.5239166666666666H21.024166666666666c-0.2735833333333333 0.89425 -1.400583333333333 1.3679166666666664 -2.2744166666666663 1.3679166666666664 -1.6864166666666665 
+              0 -2.5725 -0.9881666666666666 -2.5725 -2.6664166666666667h7.558249999999999c0.012249999999999999 -0.17149999999999999 0.024499999999999997 -0.35524999999999995 
+              0.024499999999999997 -0.5389999999999999Zm-7.578666666666667 -1.274c0.09391666666666666 -1.3760833333333333 1.0085833333333332 -2.2376666666666667 2.38875 -2.2376666666666667 
+              1.4455 0 2.1723333333333334 0.8493333333333333 2.294833333333333 2.2376666666666667H16.18133333333333Z" 
+              fill="currentColor" stroke-width="0.0417">
+      </path>
+    </symbol>
+
+    <symbol id="icon-twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <desc>
+        X Twitter Streamline Icon: https://streamlinehq.com
+      </desc>
+      <!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.-->
+      <path d="M18.761615624999997 1.369490625h3.6082406250000005L14.488968750000002 10.374759375l9.27103125 
+              12.25575H16.502634375L10.8142875 15.1993734375 4.313325 22.630509375H0.699975L9.127720312500001 
+              12.996609375000002 0.24 1.369490625h7.4413546875l5.136374999999999 6.792281249999999 5.943885937499999 
+              -6.792281249999999Zm-1.26748125 19.104253125h1.998328125L6.592753125 3.413821875h-2.146546875l13.047928124999999 
+              17.059921875Z" fill="currentColor" stroke-width="0.0469">
+      </path>
+    </symbol>
+
+    <symbol id="icon-instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <desc>
+        Instagram Streamline Icon: https://streamlinehq.com
+      </desc>
+      <!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.-->
+        <path d="M12.002625 5.971114285714286c-3.3371410714285714 0 -6.028885714285714 2.69175 -6.028885714285714 
+                6.028885714285714s2.6917446428571425 6.028885714285714 6.028885714285714 6.028885714285714S18.031510714285712 
+                15.337135714285715 18.031510714285712 12s-2.69175 -6.028885714285714 -6.028885714285714 -6.028885714285714Zm0 
+                9.94845c-2.1565499999999997 0 -3.9195642857142854 -1.7577696428571428 -3.9195642857142854 -3.9195642857142854s1.7577696428571428 
+                -3.9195642857142854 3.9195642857142854 -3.9195642857142854S15.922183928571426 9.838205357142856 15.922183928571426 12s-1.7630142857142854 
+                3.9195642857142854 -3.919558928571428 3.9195642857142854Zm7.681708928571428 -10.195060714285713c0 0.7818107142857142 
+                -0.6296464285714285 1.4062125 -1.4062125 1.4062125 -0.7818160714285713 0 -1.4062178571428572 -0.6296464285714285 
+                -1.4062178571428572 -1.4062125s0.6296517857142857 -1.4062178571428572 1.4062178571428572 -1.4062178571428572 
+                1.4062125 0.6296517857142857 1.4062125 1.4062178571428572Zm3.9930267857142856 1.4272017857142858c-0.0892017857142857 
+                -1.8836999999999997 -0.5194607142857143 -3.5522678571428568 -1.8994446428571428 -4.927001785714285 -1.3747285714285713 
+                -1.3747339285714284 -3.0433017857142857 -1.8049928571428568 -4.926996428571429 -1.8994392857142857 -1.941417857142857 
+                -0.11018571428571428 -7.760421428571428 -0.11018571428571428 -9.701839285714286 0 -1.87845 0.0892017857142857 
+                -3.547017857142857 0.5194607142857143 -4.927001785714285 1.8941946428571428S0.4170857142857142 5.262760714285714 
+                0.3226392857142857 7.1464607142857135c-0.11018571428571428 1.9414124999999998 -0.11018571428571428 7.760416071428571 0 
+                9.701833928571428 0.0892017857142857 1.8836999999999997 0.5194607142857143 3.5522678571428568 1.8994392857142857 
+                4.927001785714285s3.0433017857142857 1.8049928571428568 4.927001785714285 1.8994392857142857c1.941417857142857 
+                0.11018571428571428 7.760421428571428 0.11018571428571428 9.701839285714286 0 1.8836946428571428 -0.0892017857142857 
+                3.5522678571428568 -0.5194607142857143 4.926996428571429 -1.8994392857142857 1.3747339285714284 -1.3747339285714284 
+                1.8049928571428568 -3.0433017857142857 1.8994446428571428 -4.927001785714285 0.11018571428571428 -1.941417857142857 
+                0.11018571428571428 -7.755171428571429 0 -9.696589285714284Zm-2.5081017857142855 11.779676785714285c-0.409275 
+                1.0284267857142855 -1.2015803571428572 1.8207321428571428 -2.2352517857142855 2.2352517857142855 -1.5478874999999999 
+                0.6139071428571429 -5.220841071428571 0.4722374999999999 -6.931382142857142 0.4722374999999999s-5.388744642857143 
+                0.136425 -6.931382142857142 -0.4722374999999999c-1.0284267857142855 -0.40926964285714285 -1.8207375 -1.2015803571428572 
+                -2.235257142857143 -2.2352517857142855 -0.6139071428571429 -1.5478874999999999 -0.4722321428571428 -5.220835714285714 
+                -0.4722321428571428 -6.931382142857142s-0.136425 -5.388744642857143 0.4722321428571428 -6.931382142857142c0.409275 
+                -1.0284267857142855 1.2015803571428572 -1.8207321428571428 2.235257142857143 -2.2352517857142855 1.5478821428571428 
+                -0.6139071428571429 5.220835714285714 -0.4722374999999999 6.931382142857142 -0.4722374999999999s5.388739285714285 
+                -0.136425 6.931382142857142 0.4722374999999999c1.0284267857142855 0.40926964285714285 1.8207321428571428 1.2015803571428572 
+                2.2352517857142855 2.2352517857142855 0.6139071428571429 1.5478874999999999 0.4722374999999999 5.220835714285714 
+                0.4722374999999999 6.931382142857142s0.14166964285714284 5.388744642857143 -0.4722374999999999 6.931382142857142Z" 
+                fill="currentColor" stroke-width="0.0536">
+        </path>
+    </symbol>
+
+    <symbol id="icon-linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <desc>
+        Linkedin In Streamline Icon: https://streamlinehq.com
+      </desc>
+      <!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.-->
+      <path d="M5.5047 23.7597375H0.6285v-15.702749999999998h4.8762Zm-2.440725 -17.844749999999998c-1.55925 0 -2.823975 
+              -1.2914999999999999 -2.823975 -2.8507499999999997 0 -2.1738964285714286 2.3533125 -3.5325803571428573 
+              4.235962499999999 -2.445632142857143 0.8737392857142856 0.50445 1.4119875 1.4367214285714285 1.4119875 
+              2.445632142857143 0 1.55925 -1.2652499999999998 2.8507499999999997 -2.823975 2.8507499999999997Zm20.690775 
+              17.844749999999998h-4.8657v-7.643999999999999c0 -1.82175 -0.03675 -4.1579999999999995 -2.5352249999999996 
+              -4.1579999999999995 -2.5352249999999996 0 -2.9237249999999997 1.9792499999999997 -2.9237249999999997 
+              4.02675v7.77525h-4.87095v-15.702749999999998h4.676699999999999v2.142h0.06824999999999999c0.6509999999999999 
+              -1.23375 2.2412249999999996 -2.53575 4.6137 -2.53575 4.935 0 5.8422 3.2497499999999997 5.8422 7.47075v8.62575Z" 
+              fill="currentColor" stroke-width="0.0536">
+      </path>
+    </symbol>
+  </svg>
+
   <div class="main-container">
+
     <header>
-      <nav aria-label="Main Navigation">
-        <div class="brand">
-          <a href="../index.html">
-              <!-- <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Realsam Logo" role="img" class="logo-svg">
+      <nav>
+        <a href="index.html" class="brand">
+          <!-- <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" 
+          aria-label="Realsam Logo" role="img" class="logo-svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M20.96 7.46C20.96 4.44 18.52 2 15.5 2H7.06V4.83H15.16C16.72 4.83 17.99 6.12 17.99 7.68C17.99 9.25 16.72 10.54 15.16 10.54H7.06C4.23 10.76 2 13.12 2 16V16.5C2 19.51 4.44 21.96 7.46 21.96H15.9L14.46 19.08H7.81C6.25 19.08 4.98 17.79 4.98 16.22C4.98 14.84 5.97 13.67 7.28 13.42H15.5C18.52 13.42 20.96 10.97 20.96 7.96V7.46Z"
+                d="M20.96 7.46C20.96 4.44 18.52 2 15.5 2H7.06V4.83H15.16C16.72 4.83 17.99 6.12 
+                  17.99 7.68C17.99 9.25 16.72 10.54 15.16 10.54H7.06C4.23 10.76 2 13.12 2 
+                  16V16.5C2 19.51 4.44 21.96 7.46 21.96H15.9L14.46 19.08H7.81C6.25 19.08 
+                  4.98 17.79 4.98 16.22C4.98 14.84 5.97 13.67 7.28 13.42H15.5C18.52 13.42 20.96 
+                  10.97 20.96 7.96V7.46Z"
                 fill="currentColor" />
               <path
-                d="M21.36 21.99C21.91 21.98 22.16 21.57 21.93 21.07L19.3 15.46C18.95 14.71 18 14.12 17.18 14.13L16.18 14.14C15.91 14.14 15.78 14.35 15.9 14.6L18.95 21.11C19.19 21.61 19.82 22.01 20.37 22L21.36 21.99Z"
+                d="M21.36 21.99C21.91 21.98 22.16 21.57 21.93 21.07L19.3 15.46C18.95 14.71 18 14.12 
+                  17.18 14.13L16.18 14.14C15.91 14.14 15.78 14.35 15.9 14.6L18.95 21.11C19.19 21.61 
+                  19.82 22.01 20.37 22L21.36 21.99Z"
                 fill="currentColor" />
-            </svg> -->
+          </svg> -->
+          <div class="dark-themed">
             <img src="../icons/realsam_logo_white.svg" 
-            alt="Realsam logo" 
-            class="realsam-logo">
-            <img src="../icons/realsam_text_white.svg" 
-            alt="Realsam logo" 
-            class="realsam-logo">
-          </a>
+            alt="Realsam Logo" class="realsam-logo">
+          <img src="../icons/realsam_text_white.svg" 
+            alt="Realsam Logo" class="realsam-logo">
+          </div>
+          <div class="light-themed">
+            <img src="../icons/realsam_logo_black.svg" 
+            alt="Realsam Logo" class="realsam-logo">
+          <img src="../icons/realsam_text_black.svg" 
+            alt="Realsam Logo" class="realsam-logo">
+          </div>
+        </a>
+        <div class="pages">
+          <ul>
+            <li>
+              <a href="pages/about.html"
+                 class="current-page">
+                 About
+                <div class="indicator"></div>
+              </a>
+            </li>
+            <li>
+              <a href="#">Services
+                <div class="indicator"></div>
+              </a>
+            </li>
+            <li>
+              <a href="#">Contact
+                <div class="indicator"></div>
+              </a>
+            </li>
+            <li>
+              <a href="#">Blog
+                <div class="indicator"></div>
+              </a>
+            </li>
+            <li>
+              <button id="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+                <svg class="icon">
+                  <use href="#icon-sun"></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
         </div>
-        <ul class="nav">
-          <li>
-            <a href="../pages/about.html"
-              class="current-page"
-              >About
-              <div class="indicator"></div>
-            </a>
-          </li>
-          <li><a href="../pages/projects.html">Services</a></li>
-          <li><a href="../pages/contact.html">Contact</a></li>
-          <li><a href="../pages/blog.html">Blog</a></li>
-        </ul>
+        <div class="menu">
+          <div class="menu-bar"></div>
+          <div class="menu-bar"></div>
+          <div class="menu-bar"></div>
+        </div>
       </nav>
     </header>
-  
+
     <main>
-  
-      <section id="hero-section" class="hero">
-        <div class="hero-left-section">
+
+      <section class="hero">
+        <div class="col-1">
           <div class="hero-text">
             <h1>
-              Hello! I'm 
+              Hello! I'm <br>
               <span>Samuel Nwaokocha</span> 
             </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur. 
-              At pellentesque consequat tortor dolor 
-              nibh nullam. Platea eget sed sed amet 
-              vitae. Vulputate turpis ultrices nunc 
-              etiam leo. Pulvinar suspendisse mauris 
-              dui placerat malesuada eget nunc auctor in.
+              a UX Designer and Frontend Developer turning 
+              complex problems into elegant, usable solutions.
             </p>
+            <div class="location">
+              <div>
+                <img src="icons/map-pin.svg" 
+                alt="map pin icon" 
+                class="pin-icon">
+                <p>Lagos, Nigeria</p>
+              </div>
+              <div>
+                <img src="icons/clock.svg" 
+                alt="clock time icon" 
+                class="clock-icon">
+                <p>14:21</p>
+              </div>
+            </div>
           </div>
           <button class="primary-btn">
               Get in Touch
-            <img src="../icons/arrow-right.svg" 
+            <!-- <img src="icons/arrow-right.svg" 
             alt="" 
-            class="btn-icon">
+            class="btn-icon"> -->
+            <svg class="icon">
+              <use href="#icon-arrow-right"></use>
+            </svg>
           </button>
         </div>
-  
-        <div class="hero-right-section">
-          <img src="../images/Stock-Portrait-Sized.png" 
-          alt="" 
-          class="user-image">
+        <div class="col-2">
+          <img src="images/Stock-Portrait-Sized.png" 
+            alt="Image of Samuel Nwaokocha" 
+            class="user-image">
         </div>
       </section>
-      
+
+      <div class="line"><div></div></div>
+
+      <section class="clients">
+        <div class="logos-slide">
+          <div class="logo">
+            <img src="icons/Logo.svg" alt="Clients">
+          </div>
+          <div class="logo">
+            <img src="icons/Logo-1.svg" alt="Clients">
+          </div>
+          <div class="logo">
+            <img src="icons/Logo-2.svg" alt="Clients">
+          </div>
+          <div class="logo">
+            <img src="icons/Logo-3.svg" alt="Clients">
+          </div>
+          <div class="logo">
+            <img src="icons/Logo-4.svg" alt="Clients">
+          </div>
+          <div class="logo">
+            <img src="icons/Logo-5.svg" alt="Clients">
+          </div>
+          <div class="logo">
+            <img src="icons/Logo-3.svg" alt="Clients">
+          </div>
+          <div class="logo">
+            <img src="icons/Logo-4.svg" alt="Clients">
+          </div>
+          <div class="logo">
+            <img src="icons/Logo-5.svg" alt="Clients">
+          </div>
+        </div>
+      </section>
+      <div class="line"><div></div></div>
+      <section class="about">
+        <div class="col-1">
+          <h3>
+            About Me
+          </h3>
+          <h2>
+            Delivering results that exceed your expectations
+          </h2>
+        </div>
+        <div class="col-2">
+          <div class="about-text">
+            <p class="reveal-type">
+              I collaborate with global clients to Cultivate 
+              Compelling and Immersive Digital Experiences 
+              Through The Realms of Design and Development 
+            </p>
+            <div class="about-stats">
+              <div class="stat">
+                <h1>
+                  127+
+                </h1>
+                <div class="line2"></div>
+                <p>
+                  Completed Projects
+                </p>
+              </div>
+              <div class="stat">
+                <h1>
+                  7+
+                </h1>
+                <div class="line2"></div>
+                <p>
+                  Years of Experience
+                </p>
+              </div>
+            </div>
+          </div>
+          <button class="secondary-btn"
+            onclick="location.href='pages/about.html'">
+            Learn more
+            <!-- <img src="icons/arrow-right.svg" 
+              alt="" 
+              class="btn-icon"> -->
+            <svg class="icon">
+              <use href="#icon-arrow-right"></use>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <div class="line"><div></div></div>
+
+      <section class="services">
+        <div class="col-1">
+          <h3>
+            Services
+          </h3>
+          <h2>
+            What I do?
+          </h2>
+        </div>
+        <div class="col-2">
+          <div class="service-card">
+            <div class="service-title">
+              <p>
+                &middot; Visual Design
+              </p>
+            </div>
+            <div class="service-description">
+              <p>
+                Design that is unique, functional and 
+                beautiful is at the heart of everything 
+                we create. We’re obsessed with user 
+                experience, designing with the user’s 
+                need in mind.
+              </p>
+            </div>
+            <div class="service-categories">
+              <p>
+                UI/UX Design, Mockup Design, Graphic Design, 
+                and Branding
+              </p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-title">
+              <p class="text-body">
+                &middot; Web development
+              </p>
+            </div>
+            <div class="service-description">
+              <p class="text-body">
+                Create, learn, iterate and reiterate. We 
+                understand how to extract logic and order 
+                from chaos. It’s how we develop products that 
+                go beyond the forefront and become the next.
+              </p>
+            </div>
+            <div class="service-categories">
+              <p class="text-body">
+                Framer Development, Webflow Developmet, 
+                Wordpress Development, Website Optimization
+              </p>
+            </div>
+          </div>
+          <button class="secondary-btn">
+            Check Rates
+            <!-- <img src="icons/arrow-right.svg" 
+              alt="" 
+              class="btn-icon"> -->
+            <svg class="icon">
+              <use href="#icon-arrow-right"></use>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <div class="line"><div></div></div>
+
+      <section class="testimonials">
+        <div class="col-1">
+          <h3>
+            Testimonials
+          </h3>
+          <h2>
+            What My Clients Say?
+          </h2>
+        </div>
+        <div class="col-2">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              <p>
+                &ldquo;
+              </p>
+            </div>
+            <div class="testimonial-review">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. 
+                At pellentesque consequat tortor dolor 
+                nibh nullam. Platea eget sed sed amet vitae. 
+                Vulputate turpis ultrices nunc etiam leo. 
+                Pulvinar suspendisse mauris dui placerat 
+                malesuada eget nunc auctor in.
+              </p>
+            </div>
+            <div class="testimonial-user">
+              <img src="images/testimonials/avi.png" 
+                alt="client avi">
+              <div class="user-info">
+                <h5>
+                 Doug Clarke
+                </h5>
+                <p>
+                 Alpha Riding
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              <p>
+                &ldquo;
+              </p>
+            </div>
+            <div class="testimonial-review">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. 
+                At pellentesque consequat tortor dolor 
+                nibh nullam. Platea eget sed sed amet vitae. 
+                Vulputate turpis ultrices nunc etiam leo. 
+                Pulvinar suspendisse mauris dui placerat 
+                malesuada eget nunc auctor in.
+              </p>
+            </div>
+            <div class="testimonial-user">
+              <img src="images/testimonials/avi-1.png" 
+                alt="client avi">
+              <div class="user-info">
+                <h5>
+                 Cat Hancock
+                </h5>
+                <p>
+                 BBL Logistics
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              <p>
+                &ldquo;
+              </p>
+            </div>
+            <div class="testimonial-review">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. 
+                At pellentesque consequat tortor dolor 
+                nibh nullam. Platea eget sed sed amet vitae. 
+                Vulputate turpis ultrices nunc etiam leo. 
+                Pulvinar suspendisse mauris dui placerat 
+                malesuada eget nunc auctor in.
+              </p>
+            </div>
+            <div class="testimonial-user">
+              <img src="images/testimonials/avi.png" 
+                alt="client avi">
+              <div class="user-info">
+                <h5>
+                 Doug Clarke
+                </h5>
+                <p>
+                 Alpha Riding
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              <p>
+                &ldquo;
+              </p>
+            </div>
+            <div class="testimonial-review">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. 
+                At pellentesque consequat tortor dolor 
+                nibh nullam. Platea eget sed sed amet vitae. 
+                Vulputate turpis ultrices nunc etiam leo. 
+                Pulvinar suspendisse mauris dui placerat 
+                malesuada eget nunc auctor in.
+              </p>
+            </div>
+            <div class="testimonial-user">
+              <img src="images/testimonials/avi-1.png" 
+                alt="client avi">
+              <div class="user-info">
+                <h5>
+                 Cat Hancock
+                </h5>
+                <p>
+                 BBL Logistics
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button class="secondary-btn">
+            Read More
+            <img src="icons/arrow-right.svg" 
+              alt="" 
+              class="btn-icon">
+          </button>
+        </div>
+      </section>
+
+      <div class="line"><div></div></div>
+
+      <section class="portfolio">
+        <div class="row-1">
+          <div class="col-1">
+            <h3>
+              Portfolio
+            </h3>
+            <h2>
+              Featured Works
+            </h2>
+          </div>
+          <div class="col-2">
+            <button class="secondary-btn">
+              <!-- <img src="icons/arrow-right.svg" 
+                alt="" 
+                class="btn-icon"> -->
+              <svg class="icon">
+                <use href="#icon-arrow-right"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="project-carousel">
+          <div class="project-card">
+            <a href="#" 
+              class="project-link">
+              <img src="images/projects/Project-Preview.png" 
+                alt="Project Preview" 
+                class="project-thumbnail">
+            </a>
+          </div>
+          <div class="project-card">
+            <a href="#" 
+              class="project-link">
+              <img src="images/projects/Project-Preview-1.png" 
+                alt="Project Preview" 
+                class="project-thumbnail">
+            </a>
+          </div>
+          <div class="project-card">
+            <a href="#" 
+              class="project-link">
+              <img src="images/projects/Project-Preview-2.png"
+                alt="Project Preview" 
+                class="project-thumbnail">
+            </a>
+          </div>
+          <div class="project-card">
+            <a href="#" 
+              class="project-link">
+              <img src="images/projects/Project-Preview.png" 
+                alt="Project Preview" 
+                class="project-thumbnail">
+            </a>
+          </div>
+          <div class="project-card">
+            <a href="#" 
+              class="project-link">
+              <img src="images/projects/Project-Preview-1.png" 
+                alt="Project Preview" 
+                class="project-thumbnail">
+            </a>
+          </div>
+          <div class="project-card">
+            <a href="#" 
+              class="project-link">
+              <img src="images/projects/Project-Preview-2.png"
+                alt="Project Preview" 
+                class="project-thumbnail">
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="line"><div></div></div>
+
     </main>
+
+    <footer>
+      <div class="row-1">
+        <div class="col-1">
+          <h3>
+            Have a Project in Mind?
+          </h3>
+          <h2>
+            Let's Work Together
+          </h2>
+        </div>
+        <div class="col-2">
+          <button class="secondary-btn">
+            Get in Touch
+            <!-- <img src="icons/arrow-right.svg" 
+              alt="" 
+              class="btn-icon"> -->
+            <svg class="icon">
+              <use href="#icon-arrow-right"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="line"><div></div></div>
+      
+      <div class="row-2">
+        <div class="col-1">
+          <p class="footer-note">
+            Working in development and design has 
+            given me a stronger sense of the 
+            extraordinary in my digital work.
+          </p>
+          <p class="caption">
+            &copy; realsam.pro. All rights reserved 2025.
+          </p>
+        </div>
+        <div class="col-2">
+          <div class="footer-tab">
+            <a href="https://www.behance.net/itzrealsam" 
+              class="footer-link">
+              <svg class="icon">
+                <use href="#icon-behance"></use>
+              </svg>
+              <!-- <img src="icons/fa6-brands_square-behance.svg" 
+                alt="behance-logo"> -->
+              Behance
+            </a>
+          </div>
+          <div class="footer-tab">
+            <a href="https://www.twitter.com/itzrealsam" 
+              class="footer-link">
+              <svg class="icon">
+                <use href="#icon-twitter"></use>
+              </svg>
+              <!-- <img src="icons/fa6-brands_square-x-twitter.svg" 
+                alt="twitter-x-logo"> -->
+              Twitter
+            </a>
+          </div>
+          <div class="footer-tab">
+            <a href="https://www.linkedin.com/itzrealsam" 
+              class="footer-link">
+              <svg class="icon">
+                <use href="#icon-linkedin"></use>
+              </svg>
+              <!-- <img src="icons/fa6-brands_linkedin.svg" 
+                alt="linkedIn-logo"> -->
+              LinkedIn
+            </a>
+          </div>
+          <div class="footer-tab">
+            <a href="https://www.instagram.com/iam.realsam" 
+              class="footer-link">
+              <svg class="icon">
+                <use href="#icon-instagram"></use>
+              </svg>
+              <!-- <img src="icons/fa6-brands_square-instagram.svg"
+                alt="instagram-logo"> -->
+              Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
   </div>
+
   
-  
-  
+
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+
+  <!-- GSAP ScrollTrigger Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <script>
+
+    //GSAP ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger)
+
+    const splitTypes = document.querySelectorAll ('.reveal-type')
+
+    splitTypes.forEach((char,i) => {
+
+      const text = new SplitType(char, { types: 'chars'})
+
+      gsap.from(text.chars, {
+        scrollTrigger: {
+          trigger: char,
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: true,
+          markers: false
+        },
+        y:100,
+        opacity: 0.2,
+        stagger: 0.1
+      })
+
+    })
+
+    // Lenis Basic Setup
+    const lenis = new Lenis()
+
+    lenis.on('scroll', (e) => {
+      console.log(e)
+    })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+
+
+  </script>
 </body>
 </html>

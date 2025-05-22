@@ -122,6 +122,10 @@ nav ul li a:hover .indicator {
   width: 100%;
 }
 
+nav ul li .current-page {
+  color: var(--color-text);
+}
+
 nav ul li .current-page .indicator {
   width: 100%;
   opacity: 1;
