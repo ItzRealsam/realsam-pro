@@ -267,6 +267,10 @@
   gap: .8rem;
 }
 
+.stat h1 {
+  color: var(--color-text2);
+}
+
 .stat p {
   font-size: 1.2rem;
   line-height: 1.6rem;
@@ -341,7 +345,7 @@
 }
 
 .service-title p {
-  color: var(--color-text);
+  color: var(--color-text2);
 }
 
 .service-categories p {
@@ -387,15 +391,22 @@
 /* === TESTIMONIALS SECTION === */
 .testimonials {
   display: flex;
+  align-items: flex-start;
   padding: 6.4rem;
   gap: 2.4rem;
+  /* min-height: 200vh; Ensures enough height to scroll */
 }
 
 .testimonials .col-1 {
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-self: flex-start;
   gap: 2.4rem;
+
+  position: sticky;
+  top: 6.4rem; /* Adjust based on your header height */
+  height: fit-content;
 }
 
 .testimonials .col-2 {
@@ -409,6 +420,9 @@
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+
+  opacity: 0;
+  transform: translateY(50px);
 }
 
 .testimonial-card .testimonial-quote p {

@@ -243,9 +243,9 @@
           <div class="hero-text">
             <h1>
               Hello! I'm <br>
-              <span>Samuel Nwaokocha</span> 
+              <span class="reveal-type-time">Samuel Nwaokocha</span> 
             </h1>
-            <p>
+            <p class="reveal-type-time">
               a UX Designer and Frontend Developer turning 
               complex problems into elegant, usable solutions.
             </p>
@@ -314,19 +314,21 @@
           </div>
         </div>
       </section>
+
       <div class="line"><div></div></div>
+
       <section class="about">
         <div class="col-1">
-          <h3>
+          <h3 class="reveal-type-scroll">
             About Me
           </h3>
-          <h2>
+          <h2 class="reveal-type-scroll">
             Delivering results that exceed your expectations
           </h2>
         </div>
         <div class="col-2">
           <div class="about-text">
-            <p class="reveal-type">
+            <p>
               I collaborate with global clients to Cultivate 
               Compelling and Immersive Digital Experiences 
               Through The Realms of Design and Development 
@@ -369,10 +371,10 @@
 
       <section class="services">
         <div class="col-1">
-          <h3>
+          <h3 class="reveal-type-scroll">
             Services
           </h3>
-          <h2>
+          <h2 class="reveal-type-scroll">
             What I do?
           </h2>
         </div>
@@ -437,13 +439,14 @@
 
       <section class="testimonials">
         <div class="col-1">
-          <h3>
+          <h3 class="reveal-type-scroll">
             Testimonials
           </h3>
-          <h2>
+          <h2 class="reveal-type-scroll">
             What My Clients Say?
           </h2>
         </div>
+        
         <div class="col-2">
           <div class="testimonial-card">
             <div class="testimonial-quote">
@@ -567,9 +570,12 @@
 
           <button class="secondary-btn">
             Read More
-            <img src="icons/arrow-right.svg" 
+            <!-- <img src="icons/arrow-right.svg" 
               alt="" 
-              class="btn-icon">
+              class="btn-icon"> -->
+            <svg class="icon">
+              <use href="#icon-arrow-right"></use>
+            </svg>
           </button>
         </div>
       </section>
@@ -756,9 +762,30 @@
     //GSAP ScrollTrigger
     gsap.registerPlugin(ScrollTrigger)
 
-    const splitTypes = document.querySelectorAll ('.reveal-type')
+    const splitTypes = document.querySelectorAll ('.reveal-type-time')
 
     splitTypes.forEach((char,i) => {
+
+      const text = new SplitType(char, { types: 'chars'})
+
+      gsap.from(text.chars, {
+        scrollTrigger: {
+          trigger: char,
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: false,
+          markers: false
+        },
+        y:100,
+        opacity: 0.2,
+        stagger: .01
+      })
+
+    })
+
+    const splitTypesOnScroll = document.querySelectorAll ('.reveal-type-scroll')
+
+    splitTypesOnScroll.forEach((char,i) => {
 
       const text = new SplitType(char, { types: 'chars'})
 
@@ -776,6 +803,63 @@
       })
 
     })
+
+    // Animate each block in About col-2
+    gsap.utils.toArray(".stat").forEach((block) => {
+      gsap.fromTo(
+        block,
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: block,
+            start: "top 80%",
+            end: "top 60%",
+            scrub: true,
+          },
+        }
+      );
+    });
+
+    // Animate each block in Services col-2
+    gsap.utils.toArray(".service-card").forEach((block) => {
+      gsap.fromTo(
+        block,
+        { opacity: 0, x: 50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: block,
+            start: "top 80%",
+            end: "top 60%",
+            scrub: true,
+          },
+        }
+      );
+    });
+
+    // Animate each block in Testimonials col-2
+    gsap.utils.toArray(".testimonial-card").forEach((block) => {
+      gsap.fromTo(
+        block,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: block,
+            start: "top 80%",
+            end: "top 60%",
+            scrub: true,
+          },
+        }
+      );
+    });
 
     // Lenis Basic Setup
     const lenis = new Lenis()

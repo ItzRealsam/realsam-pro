@@ -14,10 +14,12 @@
   --color-bg2: #0D0D0D;
   --color-grey: #959595;
   --color-text: #ffffff;
+  --color-text2: #ffffff;
   --color-accent: #17D3FE;
   --color-primary: #048EAD;
   --color-button-border: #ffffff33;
   --color-navbar: #0000001A;
+  --color-line: #ffffff19;
 
   /* Layout & spacing */
   --gap: 2rem;
@@ -38,12 +40,14 @@
 [data-theme="light"] {
   --color-bg: #f1f1f1;
   --color-bg2: #ffffff;
-  --color-grey: #434343;
-  --color-text: #141414;
+  --color-grey: #676767;
+  --color-text: #000000;
+  --color-text2: #006E87;
   --color-accent: #048EAD;
   --color-primary: #17D3FE;  
   --color-button-border: #00000033;
   --color-navbar: #f1f1f11A;
+  --color-line: #00000019;
 }
 
 /* === Global Resets & Defaults === */
@@ -110,7 +114,7 @@ body {
 .line div {
   height: 100%;
   width: 100%;
-  background-color: #ffffff19;
+  background-color: var(--color-line);
 }
 
 @media (min-width: 320px) and

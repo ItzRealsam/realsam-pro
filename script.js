@@ -44,8 +44,49 @@ if (savedTheme) {
 const toggleButton = document.getElementById("theme-toggle");
 const icon = toggleButton.querySelector("use");
 
+function updateIcon(theme) {
+  icon.setAttribute("href", theme === "dark" ? "#icon-sun" : "#icon-moon");
+}
+
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  toggleButton.setAttribute("aria-pressed", theme === "dark");
+  updateIcon(theme);
+  localStorage.setItem("theme", theme);
+}
+
+// Initial check on page load
+const savedTheme = localStorage.getItem("theme");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+
+setTheme(initialTheme);
+
+// Toggle on button click
+toggleButton.addEventListener("click", () => {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  setTheme(newTheme);
+
+  // Animate
+  toggleButton.querySelector("svg").classList.add("icon-rotate");
+  setTimeout(() => {
+    toggleButton.querySelector("svg").classList.remove("icon-rotate");
+  }, 300);
+});
+
+/* Changed this because if light them was preferred, the moon logo doesn't come on page refresh
+//switching theme
+const toggleButton = document.getElementById("theme-toggle");
+const icon = toggleButton.querySelector("use");
+
+function updateIcon(theme) {
+  icon.setAttribute("href", theme === "dark" ? "#icon-sun" : "#icon-moon");
+}
+
 function setTheme(isDark) {
   document.body.classList.toggle('dark', isDark);
+  // updateIcon(theme);
   icon.setAttribute('href', isDark ? '#icon-sun' : '#icon-moon');
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
@@ -74,19 +115,21 @@ toggleButton.addEventListener("click", () => {
   setTimeout(() => {
     toggleButton.querySelector('svg').classList.remove('icon-rotate');
   }, 300);
-});
+}); */
 
 // Clients section list multiplier
 var copy = document.querySelector('.logos-slide').cloneNode(true)
 document.querySelector('.clients').appendChild(copy)
 
+/* not needed rn
 //Projects Carousel
 el.scrollIntoView({
   behavior: 'smooth',
   inline: 'start'
-})
+}) */
 
-//Scroll
+/* was sticking hero col-1 instead of testimonial col-1
+Scroll
 let testimonials = document.getElementsByClassName("testimonials")[0];
 let col_1 = document.getElementsByClassName("col-1")[0];
 
@@ -104,4 +147,4 @@ window.onscroll = () => {
     col_1.style.transform = "";
     col_1.style.position = "";
   }
-}
+} */
