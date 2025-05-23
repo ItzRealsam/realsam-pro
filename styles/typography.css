@@ -5,6 +5,9 @@ h1 {
   font-size: clamp(3.2rem, 5vw, 9.6rem);
   line-height: clamp(4.8rem, 6.7vw, 12.8rem);
   color: var(--color-text);
+  
+  word-wrap: normal;
+  hyphens: none;
 }
 
 h2 {
@@ -13,6 +16,9 @@ h2 {
   font-size: clamp(3.2rem, 5vw, 6.4rem);
   line-height: clamp(4.8rem, 6.7vw, 7.2rem);
   color: var(--color-text);
+
+  word-wrap: normal;
+  hyphens: none;
 }
 
 h3 {
@@ -21,6 +27,9 @@ h3 {
   font-size: clamp(1.4rem, 5vw, 1.6rem);
   line-height: clamp(2.4rem, 6.7vw, 3.2rem);
   color: var(--color-accent);
+
+  word-wrap: normal;
+  hyphens: none;
 }
 
 h5 {
@@ -29,6 +38,9 @@ h5 {
   font-size: 1.4rem;
   line-height: 2.4rem;
   color: var(--color-text);
+  
+  word-wrap: normal;
+  hyphens: none;
 }
 
 p {
@@ -37,5 +49,8 @@ p {
   font-size: clamp(1.4rem, 5vw, 1.6rem);
   line-height: 2.8rem;
   color: var(--color-grey);
+  
+  word-wrap: normal;
+  hyphens: none;
 }
 
