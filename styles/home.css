@@ -404,10 +404,14 @@
   flex-direction: column;
   align-self: flex-start;
   gap: 2.4rem;
+}
 
-  position: sticky;
-  top: 6.4rem;
-  height: fit-content;
+@media (min-width: 1200px) {
+  .testimonials .col-1 {
+    position: sticky;
+    top: 6.4rem;
+    height: fit-content;
+  }
 }
 
 /* .testimonials .bg-ellipse {
