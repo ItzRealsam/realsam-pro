@@ -525,11 +525,22 @@
 }
 
 .project-carousel {
+  position: relative;
+
   display: flex;
   gap: 3.2rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-padding: 0 24px;
+  /* scroll-padding: 0 24px; */
+}
+
+.project-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 .project-carousel::-webkit-scrollbar {

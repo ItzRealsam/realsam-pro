@@ -117,9 +117,22 @@ toggleButton.addEventListener("click", () => {
   }, 300);
 }); */
 
-// Clients section list multiplier
+// clients section list multiplier
 var copy = document.querySelector('.logos-slide').cloneNode(true)
 document.querySelector('.clients').appendChild(copy)
+
+//projects carousel
+const carousel = document.querySelector('.project-carousel');
+const nextBtn = document.getElementById('nextProject');
+const prevBtn = document.getElementById('prevProject');
+
+nextBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: 300, behavior: 'smooth' });
+});
+
+prevBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: -300, behavior: 'smooth' });
+});
 
 /* not needed rn
 //Projects Carousel
