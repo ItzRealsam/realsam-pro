@@ -390,6 +390,8 @@
 
 /* === TESTIMONIALS SECTION === */
 .testimonials {
+  position: relative;
+  
   display: flex;
   align-items: flex-start;
   padding: 6.4rem;
@@ -408,6 +410,22 @@
   top: 6.4rem; /* Adjust based on your header height */
   height: fit-content;
 }
+
+/* .testimonials .bg-ellipse {
+  position: sticky;
+  right: -25vw;
+  top: 6.4rem;
+  transform: translateY(50%);
+  width: clamp(400px, 60vw, 500px);
+  height: clamp(400px, 60vw, 500px);
+  border-radius: 50%;
+  background: var(--color-primary);
+  opacity: 0.6;
+  filter: blur(300px);
+  z-index: -1;
+  pointer-events: none;
+} */
+
 
 .testimonials .col-2 {
   flex: 1;

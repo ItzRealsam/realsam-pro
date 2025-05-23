@@ -84,7 +84,21 @@ body {
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding-top: 6.4rem;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+}
+
+.bg-ellipse {
+  position: absolute;
+  right: -20%;
+  top: 40%;
+  width: clamp(400px, 60vw, 500px);
+  height: clamp(400px, 60vw, 500px);
+  border-radius: 50%;
+  background: var(--color-primary);
+  opacity: 0.6;
+  filter: blur(300px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* I need to sort out this bg-ellipse*/
