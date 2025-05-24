@@ -51,7 +51,7 @@ nav {
   width: 12.6rem;
 }
 
-.brand .dark-themed,
+/* .brand .dark-themed,
 .brand .light-themed {
   display: none;
   gap: 1.2rem;
@@ -81,7 +81,7 @@ html[data-theme="light"] .light-themed {
 
 .realsam-logo {
   height: 3.2rem;
-}
+} */
 
 nav .pages {
   flex: 1;
@@ -281,8 +281,13 @@ and (max-width:700px) {
     gap: .8rem;
   }
 
-  .realsam-logo {
-    height: 2.8rem;
+  .brand .realsam-logo svg {
+    width: 2.4em;
+    height: 2.4rem;
+  }
+
+  .brand .realsam-logo svg:last-child {
+    width: 9.4rem;
   }
 }
 
@@ -290,6 +295,15 @@ and (max-width:700px) {
 (max-width: 1200px) {
   nav {
     padding: 0 3.2rem;
+  }
+
+  .brand .realsam-logo svg {
+    width: 2.8em;
+    height: 2.8rem;
+  }
+
+  .brand .realsam-logo svg:last-child {
+    width: 11rem;
   }
 }
 
