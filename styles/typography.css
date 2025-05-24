@@ -32,7 +32,30 @@ h3 {
   hyphens: none;
 }
 
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 6.4rem;
+  line-height: 3.2rem;
+  color: var(--color-text);
+  
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+
 h5 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 2.0rem;
+  line-height: 3.2rem;
+  color: var(--color-text);
+  
+  word-wrap: normal;
+  hyphens: none;
+}
+
+h6 {
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 1.4rem;

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio website for Sam, a frontend and UX designer" />
 
-  <title>realsam.pro</title>
+  <title>realsam.pro | Contact</title>
 
   <!-- Dark theme: SVG + fallback PNG -->
   <link rel="icon" href="icons/favicon-dark-32x32.png" type="image/png" media="(prefers-color-scheme: dark)" />
@@ -21,12 +21,12 @@
   <!-- Linking Stylesheets -->
   <link rel="stylesheet" href="styles/cursor.css" />
   <link rel="stylesheet" href="styles/fonts.css" />
-  <link rel="stylesheet" href="styles/buttons.css" />  
+  <link rel="stylesheet" href="styles/buttons.css" />
   <link rel="stylesheet" href="styles/typography.css" />
   <link rel="stylesheet" href="styles/general.css" />
   <link rel="stylesheet" href="styles/header.css" />
   <link rel="stylesheet" href="styles/footer.css" />
-  <link rel="stylesheet" href="styles/home.css" />
+  <link rel="stylesheet" href="styles/contact.css" />
 
   <!-- Linking Javascript -->
   <script defer src="script.js"></script> 
@@ -198,6 +198,27 @@
               fill="currentColor" stroke-width="0.0536">
       </path>
     </symbol>
+
+    <symbol id="icon-mail" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22.5999 6C22.5999 4.9 21.6999 4 20.5999 4H4.59991C3.49991 4 2.59991 4.9 2.59991 6M22.5999 6V18C22.5999 
+              19.1 21.6999 20 20.5999 20H4.59991C3.49991 20 2.59991 19.1 2.59991 18V6M22.5999 6L12.5999 13L2.59991 6" 
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-phone" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22.3998 16.92V19.92C22.401 20.1985 22.3439 20.4742 22.2323 20.7294C22.1208 20.9845 21.9571 21.2136 21.7519 
+              21.4019C21.5467 21.5901 21.3044 21.7335 21.0406 21.8227C20.7768 21.9119 20.4972 21.9451 20.2198 21.92C17.1427 21.5856 
+              14.1868 20.5342 11.5898 18.85C9.17366 17.3147 7.12517 15.2662 5.58984 12.85C3.89981 10.2412 2.84808 7.271 2.51984 
+              4.18001C2.49485 3.90347 2.52771 3.62477 2.61634 3.36163C2.70496 3.09849 2.84741 2.85669 3.0346 2.65163C3.2218 2.44656 
+              3.44964 2.28271 3.70363 2.17053C3.95761 2.05834 4.23218 2.00027 4.50984 2.00001H7.50984C7.99514 1.99523 8.46563 2.16708 
+              8.8336 2.48354C9.20157 2.79999 9.44191 3.23945 9.50984 3.72001C9.63646 4.68007 9.87129 5.62273 10.2098 6.53001C10.3444 
+              6.88793 10.3735 7.27692 10.2937 7.65089C10.214 8.02485 10.0287 8.36812 9.75984 8.64001L8.48984 9.91001C9.91339 12.4136 
+              11.9863 14.4865 14.4898 15.91L15.7598 14.64C16.0317 14.3711 16.375 14.1859 16.749 14.1061C17.1229 14.0263 17.5119 14.0555 
+              17.8698 14.19C18.7771 14.5286 19.7198 14.7634 20.6798 14.89C21.1656 14.9585 21.6092 15.2032 21.9264 15.5775C22.2435 15.9518 
+              22.412 16.4296 22.3998 16.92Z" 
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
   </svg>
 
   <div class="main-container">
@@ -246,7 +267,8 @@
               </a>
             </li>
             <li>
-              <a href="#">Contact
+              <a href="#" class="current-page"
+                >Contact
                 <div class="indicator"></div>
               </a>
             </li>
@@ -274,437 +296,61 @@
 
     <main>
 
-      <section class="hero">
+      <section class="page-title">
+        <h2 class="reveal-type-scroll">
+          Let’s talk about your project
+        </h2>
+      </section>
+
+      <div class="line"><div></div></div>
+
+      <section class="contact">
         <div class="col-1">
-          <div class="hero-text">
-            <h1>
-              Hello! I'm <br>
-              <span class="reveal-type-time">Samuel Nwaokocha</span> 
-            </h1>
-            <p class="reveal-type-time">
-              a UX Designer and Frontend Developer turning 
-              complex problems into elegant, usable solutions.
-            </p>
-            <div class="location">
-              <div>
-                <img src="icons/map-pin.svg" 
-                alt="map pin icon" 
-                class="pin-icon">
-                <p>Lagos, Nigeria</p>
-              </div>
-              <div>
-                <img src="icons/clock.svg" 
-                alt="clock time icon" 
-                class="clock-icon">
-                <p>14:21</p>
-              </div>
-            </div>
-          </div>
-          <button class="primary-btn">
-              Get in Touch
-            <!-- <img src="icons/arrow-right.svg" 
-            alt="" 
-            class="btn-icon"> -->
-            <svg class="icon">
-              <use href="#icon-arrow-right"></use>
-            </svg>
-          </button>
-        </div>
-        <div class="col-2">
-          <img src="images/Stock-Portrait-Sized.png" 
-            alt="Image of Samuel Nwaokocha" 
-            class="user-image">
-        </div>
-      </section>
-
-      <div class="line"><div></div></div>
-
-      <section class="clients">
-        <div class="logos-slide">
-          <div class="logo">
-            <img src="icons/Logo.svg" alt="Clients">
-          </div>
-          <div class="logo">
-            <img src="icons/Logo-1.svg" alt="Clients">
-          </div>
-          <div class="logo">
-            <img src="icons/Logo-2.svg" alt="Clients">
-          </div>
-          <div class="logo">
-            <img src="icons/Logo-3.svg" alt="Clients">
-          </div>
-          <div class="logo">
-            <img src="icons/Logo-4.svg" alt="Clients">
-          </div>
-          <div class="logo">
-            <img src="icons/Logo-5.svg" alt="Clients">
-          </div>
-          <div class="logo">
-            <img src="icons/Logo-3.svg" alt="Clients">
-          </div>
-          <div class="logo">
-            <img src="icons/Logo-4.svg" alt="Clients">
-          </div>
-          <div class="logo">
-            <img src="icons/Logo-5.svg" alt="Clients">
-          </div>
-        </div>
-      </section>
-
-      <div class="line"><div></div></div>
-
-      <section class="about">
-        <div class="col-1">
-          <h3 class="reveal-type-scroll">
-            About Me
-          </h3>
-          <h2 class="reveal-type-scroll">
-            Delivering results that exceed your expectations
-          </h2>
-        </div>
-        <div class="col-2">
-          <div class="about-text">
-            <p>
-              I collaborate with global clients to Cultivate 
-              Compelling and Immersive Digital Experiences 
-              Through The Realms of Design and Development 
-            </p>
-            <div class="about-stats">
-              <div class="stat">
-                <h1>
-                  127+
-                </h1>
-                <div class="line2"></div>
-                <p>
-                  Completed Projects
-                </p>
-              </div>
-              <div class="stat">
-                <h1>
-                  7+
-                </h1>
-                <div class="line2"></div>
-                <p>
-                  Years of Experience
-                </p>
-              </div>
-            </div>
-          </div>
-          <button class="secondary-btn"
-            onclick="location.href='pages/about.html'">
-            Learn more
-            <!-- <img src="icons/arrow-right.svg" 
-              alt="" 
-              class="btn-icon"> -->
-            <svg class="icon">
-              <use href="#icon-arrow-right"></use>
-            </svg>
-          </button>
-        </div>
-      </section>
-
-      <div class="line"><div></div></div>
-
-      <section class="services">
-        <div class="col-1">
-          <h3 class="reveal-type-scroll">
-            Services
-          </h3>
-          <h2 class="reveal-type-scroll">
-            What I do?
-          </h2>
-        </div>
-        <div class="col-2">
-          <div class="service-card">
-            <div class="service-title">
-              <p>
-                &middot; Visual Design
-              </p>
-            </div>
-            <div class="service-description">
-              <p>
-                Design that is unique, functional and 
-                beautiful is at the heart of everything 
-                we create. We’re obsessed with user 
-                experience, designing with the user’s 
-                need in mind.
-              </p>
-            </div>
-            <div class="service-categories">
-              <p>
-                UI/UX Design, Mockup Design, Graphic Design, 
-                and Branding
-              </p>
-            </div>
-          </div>
-
-          <div class="service-card">
-            <div class="service-title">
-              <p class="text-body">
-                &middot; Web development
-              </p>
-            </div>
-            <div class="service-description">
-              <p class="text-body">
-                Create, learn, iterate and reiterate. We 
-                understand how to extract logic and order 
-                from chaos. It’s how we develop products that 
-                go beyond the forefront and become the next.
-              </p>
-            </div>
-            <div class="service-categories">
-              <p class="text-body">
-                Framer Development, Webflow Developmet, 
-                Wordpress Development, Website Optimization
-              </p>
-            </div>
-          </div>
-          <button class="secondary-btn">
-            Check Rates
-            <!-- <img src="icons/arrow-right.svg" 
-              alt="" 
-              class="btn-icon"> -->
-            <svg class="icon">
-              <use href="#icon-arrow-right"></use>
-            </svg>
-          </button>
-        </div>
-      </section>
-
-      <div class="line"><div></div></div>
-
-      <section class="testimonials">
-        
-        <div class="col-1">
-          <h3 class="reveal-type-scroll">
-            Testimonials
-          </h3>
-          <h2 class="reveal-type-scroll">
-            What My Clients Say?
-          </h2>
-        </div>
-          
-        <!-- <div class="bg-ellipse"></div> -->
-        
-        <div class="col-2">
-
-          <div class="testimonial-card">
-            <div class="testimonial-quote">
-              <p>
-                &ldquo;
-              </p>
-            </div>
-            <div class="testimonial-review">
-              <p>
-                Lorem ipsum dolor sit amet consectetur. 
-                At pellentesque consequat tortor dolor 
-                nibh nullam. Platea eget sed sed amet vitae. 
-                Vulputate turpis ultrices nunc etiam leo. 
-                Pulvinar suspendisse mauris dui placerat 
-                malesuada eget nunc auctor in.
-              </p>
-            </div>
-            <div class="testimonial-user">
-              <img src="images/testimonials/avi.png" 
-                alt="client avi">
-              <div class="user-info">
-                <h5>
-                 Doug Clarke
-                </h5>
-                <p>
-                 Alpha Riding
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-quote">
-              <p>
-                &ldquo;
-              </p>
-            </div>
-            <div class="testimonial-review">
-              <p>
-                Lorem ipsum dolor sit amet consectetur. 
-                At pellentesque consequat tortor dolor 
-                nibh nullam. Platea eget sed sed amet vitae. 
-                Vulputate turpis ultrices nunc etiam leo. 
-                Pulvinar suspendisse mauris dui placerat 
-                malesuada eget nunc auctor in.
-              </p>
-            </div>
-            <div class="testimonial-user">
-              <img src="images/testimonials/avi-1.png" 
-                alt="client avi">
-              <div class="user-info">
-                <h5>
-                 Cat Hancock
-                </h5>
-                <p>
-                 BBL Logistics
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-quote">
-              <p>
-                &ldquo;
-              </p>
-            </div>
-            <div class="testimonial-review">
-              <p>
-                Lorem ipsum dolor sit amet consectetur. 
-                At pellentesque consequat tortor dolor 
-                nibh nullam. Platea eget sed sed amet vitae. 
-                Vulputate turpis ultrices nunc etiam leo. 
-                Pulvinar suspendisse mauris dui placerat 
-                malesuada eget nunc auctor in.
-              </p>
-            </div>
-            <div class="testimonial-user">
-              <img src="images/testimonials/avi.png" 
-                alt="client avi">
-              <div class="user-info">
-                <h5>
-                 Doug Clarke
-                </h5>
-                <p>
-                 Alpha Riding
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-quote">
-              <p>
-                &ldquo;
-              </p>
-            </div>
-            <div class="testimonial-review">
-              <p>
-                Lorem ipsum dolor sit amet consectetur. 
-                At pellentesque consequat tortor dolor 
-                nibh nullam. Platea eget sed sed amet vitae. 
-                Vulputate turpis ultrices nunc etiam leo. 
-                Pulvinar suspendisse mauris dui placerat 
-                malesuada eget nunc auctor in.
-              </p>
-            </div>
-            <div class="testimonial-user">
-              <img src="images/testimonials/avi-1.png" 
-                alt="client avi">
-              <div class="user-info">
-                <h5>
-                 Cat Hancock
-                </h5>
-                <p>
-                 BBL Logistics
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <button class="secondary-btn">
-            Read More
-            <!-- <img src="icons/arrow-right.svg" 
-              alt="" 
-              class="btn-icon"> -->
-            <svg class="icon">
-              <use href="#icon-arrow-right"></use>
-            </svg>
-          </button>
-        </div>
-      </section>
-
-      <div class="line"><div></div></div>
-
-      <section class="portfolio">
-        <div class="row-1">
-          <div class="col-1">
-            <h3>
-              Portfolio
+          <div class="section-title">
+            <h3 class="reveal-type-scroll">
+              Contact
             </h3>
-            <h2>
-              Featured Works
+            <h2 class="reveal-type-scroll">
+              Let's Get in Touch
             </h2>
           </div>
-          <div class="col-2">
-            <button class="secondary-btn">
-              <!-- <img src="icons/arrow-right.svg" 
-                alt="" 
-                class="btn-icon"> -->
+          <div class="contact-details">
+            <a href="mailto:nwaokochasamuel@gmail.com">
               <svg class="icon">
-                <use href="#icon-arrow-right"></use>
+                <use href="#icon-mail"></use>
               </svg>
-            </button>
+              <p>nwaokochasamuel@gmail.com</p>
+            </a>
+            <a href="#">
+              <svg class="icon">
+                <use href="#icon-phone"></use>
+              </svg>
+              <p>+234 (0) 805 481 1801</p>
+            </a>
           </div>
         </div>
-        <div class="project-carousel">
-
-          <!-- <div class="project-controls">
-            <button class="secondary-btn" id="prevProject">
-              <svg class="icon">
-                <use href="#icon-chevron-left"></use>
-              </svg>
-            </button>
-            <button class="secondary-btn" id="nextProject">
-              <svg class="icon">
-                <use href="#icon-chevron-right"></use>
-              </svg>
-            </button>
-          </div> -->
-
-          <div class="project-card">
-            <a href="#" 
-              class="project-link">
-              <img src="images/projects/Project-Preview.png" 
-                alt="Project Preview" 
-                class="project-thumbnail">
-            </a>
-          </div>
-          <div class="project-card">
-            <a href="#" 
-              class="project-link">
-              <img src="images/projects/Project-Preview-1.png" 
-                alt="Project Preview" 
-                class="project-thumbnail">
-            </a>
-          </div>
-          <div class="project-card">
-            <a href="#" 
-              class="project-link">
-              <img src="images/projects/Project-Preview-2.png"
-                alt="Project Preview" 
-                class="project-thumbnail">
-            </a>
-          </div>
-          <div class="project-card">
-            <a href="#" 
-              class="project-link">
-              <img src="images/projects/Project-Preview.png" 
-                alt="Project Preview" 
-                class="project-thumbnail">
-            </a>
-          </div>
-          <div class="project-card">
-            <a href="#" 
-              class="project-link">
-              <img src="images/projects/Project-Preview-1.png" 
-                alt="Project Preview" 
-                class="project-thumbnail">
-            </a>
-          </div>
-          <div class="project-card">
-            <a href="#" 
-              class="project-link">
-              <img src="images/projects/Project-Preview-2.png"
-                alt="Project Preview" 
-                class="project-thumbnail">
-            </a>
+        <div class="col-2">
+          <div class="form-container">
+            <form class="contact-form" action="https://formspree.io/f/mleqrzpy" method="POST">
+              <h5 class="form-title">Send Message</h5>
+              <ul class="inputs">
+                <li>
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="your name" required>
+                </li>
+                
+                <li>
+                  <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="enteryour@email.com" required>
+                </li>
+                
+                <li>
+                  <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="speak with Realsam" required></textarea>
+                </li>
+              </ul>
+              <button type="submit" class="form-btn">Send</button>
+            </form>
           </div>
         </div>
       </section>
@@ -714,6 +360,7 @@
     </main>
 
     <footer>
+      <!-- Not necessary we are in the contact page already
       <div class="row-1">
         <div class="col-1">
           <h3>
@@ -724,8 +371,7 @@
           </h2>
         </div>
         <div class="col-2">
-          <button class="secondary-btn"
-            onclick="location.href='contact.html'">
+          <button class="secondary-btn">
             Get in Touch
             <svg class="icon">
               <use href="#icon-arrow-right"></use>
@@ -734,7 +380,7 @@
         </div>
       </div>
 
-      <div class="line"><div></div></div>
+      <div class="line"><div></div></div> -->
       
       <div class="row-2">
         <div class="col-1">
@@ -845,6 +491,12 @@
       })
 
     }) */
+
+    //Contact form animation
+    gsap.from(".form-title", {opacity: 0, y: -20, duration: 0.8});
+    gsap.from("label", {opacity: 0, x: -30, duration: 0.5, stagger: 0.2});
+    gsap.from("input, textarea", {opacity: 0, x: 30, duration: 0.6, stagger: 0.2});
+    gsap.from("button", {opacity: 0, scale: 0.5, duration: 0.5});
 
 
     // Animate each block in About col-2

@@ -17,6 +17,8 @@
   --color-text2: #ffffff;
   --color-accent: #17D3FE;
   --color-primary: #048EAD;
+  --color-input-bg: #212121;
+  --color-input-border: #404040;
   --color-button-border: #ffffff33;
   --color-navbar: #0000001A;
   --color-line: #ffffff19;
@@ -44,7 +46,9 @@
   --color-text: #000000;
   --color-text2: #006E87;
   --color-accent: #048EAD;
-  --color-primary: #17D3FE;  
+  --color-primary: #17D3FE;
+  --color-input-bg: #f1f1f1;
+  --color-input-border: #dadada; 
   --color-button-border: #00000033;
   --color-navbar: #f1f1f11A;
   --color-line: #00000019;
@@ -149,5 +153,29 @@ body {
 (max-width: 1200px) {
   .line {
     padding: 0 3.2rem;
+  }
+}
+
+.page-title {
+  padding: 6.4rem;
+
+  width: 100%;
+}
+
+.page-title h2 {
+  width: 50%;
+}
+
+@media (min-width: 320px) and
+(max-width: 700px) {
+  .page-title {
+    padding: 3.2rem 2.4rem;
+  }
+}
+
+@media (min-width: 701px) and
+(max-width: 1200px) {
+  .page-title {
+    padding: 3.2rem 3.2rem;
   }
 }

@@ -118,6 +118,36 @@ button svg {
   background-color: var(--color-primary);
 }
 
+.form-btn {
+  position: relative;
+
+  background-color: var(--color-input-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+  text-align: center;
+
+  width: fit-content;
+  height: 4.8rem;
+  padding: .5em .5em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+
+  transition: var(--transition);
+
+  /* border: .0625em solid var(--color-button-border); */
+  border-radius: .5em;
+}
+
+.form-btn:hover {
+  background-color: var(--color-primary);
+}
+
 /* .icon-btn {
   position: relative;
 
