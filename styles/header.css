@@ -1,7 +1,7 @@
 /* === NAVIGATION === */
 
 header {
-  background-color: #0000001A;
+  background-color: var(--color-navbar);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); /* Safari support */
 
