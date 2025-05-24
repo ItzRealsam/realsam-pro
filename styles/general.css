@@ -84,7 +84,7 @@ body {
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding-top: 6.4rem;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 .bg-ellipse {
