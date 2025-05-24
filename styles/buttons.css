@@ -59,7 +59,7 @@ button {
   height: calc(100% + 6px);
   width: calc(100% + 6px);
   padding: 1px;
-  background-image: conic-gradient(from var(--angle), transparent 50%, #17D3FE);
+  background-image: conic-gradient(from var(--angle), transparent 50%, var(--color-accent));
   animation: 3s button-spin linear infinite;
 }
 
