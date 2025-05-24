@@ -36,6 +36,21 @@ nav {
   display: flex;
 }
 
+.brand .realsam-logo {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.brand .realsam-logo svg {
+  width: 3.2rem;
+  height: 3.2rem;
+  color: var(--color-text);
+}
+
+.brand .realsam-logo svg:last-child {
+  width: 12.6rem;
+}
+
 .brand .dark-themed,
 .brand .light-themed {
   display: none;
