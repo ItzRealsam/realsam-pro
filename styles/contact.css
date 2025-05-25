@@ -173,6 +173,10 @@
 }
 
 .modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
   background-color: var(--color-input-bg);
   padding: 2rem;
   border-radius: 6px;
@@ -180,14 +184,9 @@
   max-width: 400px;
 }
 
-.modal button {
-  background-color: var(--color-bg2);
-  color: var(--color-text);
-  margin-top: 1rem;
-}
-
 .g-recaptcha {
   margin-top: 0.5rem;
+  width: 100%;
 }
 
 /* .contact-form button {

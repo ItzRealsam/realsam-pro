@@ -14,7 +14,7 @@ function validateField(input) {
   }
 
   if (input.type === "email") {
-    const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(input.value)) {
       showError(input, "Please enter a valid email.");
       return false;

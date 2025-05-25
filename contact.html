@@ -283,6 +283,11 @@
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
 
+    <symbol id="icon-x" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.2 6L6.2 18M6.2 6L18.2 18" 
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
   </svg>
 
   <div class="main-container">
@@ -420,8 +425,13 @@
         <!-- Modal -->
         <div class="modal" id="thankYouModal">
           <div class="modal-content">
+            <button class="icon-btn"
+              onclick="closeModal()">
+              <svg class="icon">
+                <use href="#icon-x"></use>
+              </svg>
+            </button>
             <p>🎉 Thank you for your message! I'll get back to you soon.</p>
-            <button onclick="closeModal()">Close</button>
           </div>
         </div>
       </section>
