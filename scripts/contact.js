@@ -1,3 +1,4 @@
+//CONTACT SECTION
 
 const form = document.querySelector(".contact-form");
 const inputs = form.querySelectorAll("input, textarea");
@@ -109,4 +110,30 @@ function closeModal() {
 
 window.addEventListener("keydown", e => {
   if (e.key === "Escape") closeModal();
+});
+
+// FAQ SECTION
+
+// Toggle FAQ open/close
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', () => {
+    const card = question.parentElement;
+    card.classList.toggle('open');
+  });
+});
+
+// Animate each FAQ card into view
+gsap.registerPlugin(ScrollTrigger);
+gsap.utils.toArray('.faq-card').forEach(card => {
+  gsap.from(card, {
+    scrollTrigger: {
+      trigger: card,
+      start: "top 90%",
+    },
+    opacity: 0,
+    y: 40,
+    duration: 0.5,
+    ease: "power2.out",
+    stagger: 0.1
+  });
 });
