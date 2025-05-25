@@ -35,27 +35,20 @@
   gap: .8rem;
 }
 
-.contact .col-1 .contact-details a p {
-  color: var(--color-grey);
+.contact-details p {
+  color: var(--color-grey);  
+  transition: color 0.3s ease;
 }
 
-.contact .col-1 .contact-details a svg {
+.contact-details a svg {
   color: var(--color-grey);
   height: 2.4rem;
   width: 2.4rem;
 }
 
-.contact .col-1 .contact-details a p:hover {
-  color: var(--color-grey);
-}
-
-.contact-details:hover p,
-.contact-details:hover svg {
+.contact-details a:hover p,
+.contact-details a:hover svg {  
   color: var(--color-text);
-}
-
-.contact-details:hover svg {
-  transform: rotate(360deg);
 }
 
 .contact .col-2 {
@@ -310,18 +303,24 @@
 }
 
 .faq-card .faq-question p {
-  color: var(--color-text);
+  color: var(--color-grey);
   width: 100%;
 }
 
 .faq-card .faq-question svg {
   width: 2.4rem;
   height: 2.4rem;
+  color: var(--color-grey);
+  transition: all 0.6s ease;
+}
+
+.faq-card:hover .faq-question p {
   color: var(--color-text);
 }
 
 .faq-card:hover .faq-question svg {
-  transform: rotate(360deg);
+  color: var(--color-text);
+  transform: rotate(180deg);
 }
 
 .faq-card .faq-answer {
