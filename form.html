@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Form</title>
+  
+  <link rel="stylesheet" href="form.css" />
+
+  <!-- Linking Javascripts -->
+  <script defer src="scripts/general.js"></script>
+  <script defer src="scripts/contact.js"></script>
+
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-m3+iPMnq3Bv14dB5Z3pdflEtI4mhfDxB25cTh1ZfuvIQl3BQZ43uTHlG1JVLlYfUUPWfJGqEcpP93apNP3lQCg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Contact Me</h2>
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" placeholder="John Doe" required />
+      <span class="error-message" aria-live="polite"></span>
+
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="john@example.com" required />
+      <span class="error-message" aria-live="polite"></span>
+
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="5" placeholder="Your message..." required></textarea>
+      <span class="error-message" aria-live="polite"></span>
+
+      <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY_HERE"></div>
+
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="thankYouModal">
+    <div class="modal-content">
+      <p>🎉 Thank you for your message! I'll get back to you soon.</p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</body>
+</html>

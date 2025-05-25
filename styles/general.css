@@ -16,6 +16,8 @@
   --color-text: #ffffff;
   --color-text2: #ffffff;
   --color-accent: #17D3FE;
+  --color-warning: #E8480D;
+  --color-warning2: #E8825E;
   --color-primary: #048EAD;
   --color-input-bg: #212121;
   --color-input-border: #404040;
@@ -46,6 +48,8 @@
   --color-text: #000000;
   --color-text2: #006E87;
   --color-accent: #048EAD;
+  --color-warning: #E8480D;
+  --color-warning2: #E8825E;
   --color-primary: #17D3FE;
   --color-input-bg: #f1f1f1;
   --color-input-border: #dadada; 

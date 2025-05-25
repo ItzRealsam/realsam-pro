@@ -28,8 +28,9 @@
   <link rel="stylesheet" href="styles/footer.css" />
   <link rel="stylesheet" href="styles/contact.css" />
 
-  <!-- Linking Javascript -->
-  <script defer src="script.js"></script> 
+  <!-- Linking Javascripts -->
+  <script defer src="scripts/general.js"></script>
+  <script defer src="scripts/contact.js"></script>
 
   <!-- GSAP Core -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
@@ -386,26 +387,41 @@
         </div>
         <div class="col-2">
           <div class="form-container">
-            <form class="contact-form" action="https://formspree.io/f/mleqrzpy" method="POST">
+            <form class="contact-form" 
+                  action="https://formspree.io/f/mvgajapw" 
+                  method="POST">
               <h5 class="form-title">Send Message</h5>
               <ul class="inputs">
                 <li>
                   <label for="name">Name</label>
                   <input type="text" id="name" name="name" placeholder="your name" required>
+                  <span class="error-message" aria-live="polite"></span>
                 </li>
                 
                 <li>
                   <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="enteryour@email.com" required>
+                  <input type="email" id="email" name="email" placeholder="enteryour@email.com" required>
+                  <span class="error-message" aria-live="polite"></span>
                 </li>
                 
                 <li>
                   <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="speak with Realsam" required></textarea>
+                  <textarea id="message" name="message" rows="5" placeholder="speak with Realsam" required></textarea>
+                  <span class="error-message" aria-live="polite"></span>
                 </li>
               </ul>
+
+              <div class="g-recaptcha" data-sitekey="6LfrjkgrAAAAAMSn9rHUxmokzBJc_cIiw8xFbVL9"></div>
+
               <button type="submit" class="form-btn">Send</button>
             </form>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal" id="thankYouModal">
+          <div class="modal-content">
+            <p>🎉 Thank you for your message! I'll get back to you soon.</p>
+            <button onclick="closeModal()">Close</button>
           </div>
         </div>
       </section>
@@ -498,6 +514,9 @@
     </footer>
 
   </div>
+
+  <!-- Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <script>
 
