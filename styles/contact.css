@@ -36,13 +36,26 @@
 }
 
 .contact .col-1 .contact-details a p {
-  color: var(--color-text);
+  color: var(--color-grey);
 }
 
 .contact .col-1 .contact-details a svg {
-  color: var(--color-text);
+  color: var(--color-grey);
   height: 2.4rem;
   width: 2.4rem;
+}
+
+.contact .col-1 .contact-details a p:hover {
+  color: var(--color-grey);
+}
+
+.contact-details:hover p,
+.contact-details:hover svg {
+  color: var(--color-text);
+}
+
+.contact-details:hover svg {
+  transform: rotate(360deg);
 }
 
 .contact .col-2 {
@@ -305,6 +318,10 @@
   width: 2.4rem;
   height: 2.4rem;
   color: var(--color-text);
+}
+
+.faq-card:hover .faq-question svg {
+  transform: rotate(360deg);
 }
 
 .faq-card .faq-answer {
