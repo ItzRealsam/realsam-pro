@@ -446,6 +446,7 @@
   flex-direction: column;
   gap: 2.4rem;
 
+  /* for the animation*/
   opacity: 0;
   transform: translateY(50px);
 }

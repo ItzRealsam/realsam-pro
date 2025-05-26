@@ -54,7 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Connect Lenis and ScrollTrigger
-lenis.on("scroll", ScrollTrigger.update);
+document.addEventListener("DOMContentLoaded", () => {
+ 
+  lenis.on("scroll", ScrollTrigger.update);
+});
 
 
 
