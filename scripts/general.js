@@ -13,6 +13,75 @@ document.addEventListener('click', () => {
   }, 500)
 })
 
+// Lenis Basic Setup
+const lenis = new Lenis()
+
+lenis.on('scroll', (e) => {
+  console.log(e)
+})
+
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
+
+//GSAP ScrollTrigger
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger)
+
+  const splitTypes = document.querySelectorAll ('.reveal-type-time, .reveal-type-scroll')
+
+  splitTypes.forEach((word,i) => {
+
+    const text = new SplitType(word, { types: 'words'})
+
+    gsap.from(text.words, {
+      scrollTrigger: {
+        trigger: word,
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: false,
+        markers: false
+      },
+      y:100,
+      opacity: 0.2,
+      stagger: .01
+    })
+
+  })
+});
+
+// Connect Lenis and ScrollTrigger
+lenis.on("scroll", ScrollTrigger.update);
+
+
+
+/*
+const splitTypesOnScroll = document.querySelectorAll ('.reveal-type-scroll')
+
+splitTypesOnScroll.forEach((char,i) => {
+
+  const text = new SplitType(char, { types: 'chars'})
+
+  gsap.from(text.chars, {
+    scrollTrigger: {
+      trigger: char,
+      start: 'top 80%',
+      end: 'top 20%',
+      scrub: false,
+      markers: false
+    },
+    y:100,
+    opacity: 0.2,
+    stagger: 0.1,
+  })
+
+}) */
+
+//== HEADER ==
+
 // Navbar Menu button
 const pagesEl = document.querySelector('.pages')
 const menuEl = document.querySelector('.menu')
@@ -116,48 +185,3 @@ toggleButton.addEventListener("click", () => {
     toggleButton.querySelector('svg').classList.remove('icon-rotate');
   }, 300);
 }); */
-
-// clients section list multiplier
-var copy = document.querySelector('.logos-slide').cloneNode(true)
-document.querySelector('.clients').appendChild(copy)
-
-//projects carousel
-const carousel = document.querySelector('.project-carousel');
-const nextBtn = document.getElementById('nextProject');
-const prevBtn = document.getElementById('prevProject');
-
-nextBtn.addEventListener('click', () => {
-  carousel.scrollBy({ left: 300, behavior: 'smooth' });
-});
-
-prevBtn.addEventListener('click', () => {
-  carousel.scrollBy({ left: -300, behavior: 'smooth' });
-});
-
-/* not needed rn
-//Projects Carousel
-el.scrollIntoView({
-  behavior: 'smooth',
-  inline: 'start'
-}) */
-
-/* was sticking hero col-1 instead of testimonial col-1
-Scroll
-let testimonials = document.getElementsByClassName("testimonials")[0];
-let col_1 = document.getElementsByClassName("col-1")[0];
-
-window.onscroll = () => {
-  let scrollTop = window.scrollY;
-  let viewportHeight = window.innerHeight;
-  let contentHeight = col_1.getBoundingClientRect().height;
-  let col_1Top = testimonials.getBoundingClientRect().top + window.pageYOffset;
-
-  if(scrollTop >= contentHeight - viewportHeight + col_1Top) {
-    col_1.style.transform = 'translateY(-${contentHeight - viewportHeight + col_1Top}px)';
-    col_1.style.position = "fixed";
-  }
-  else {
-    col_1.style.transform = "";
-    col_1.style.position = "";
-  }
-} */
