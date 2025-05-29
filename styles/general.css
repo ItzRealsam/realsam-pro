@@ -161,6 +161,9 @@ body {
 }
 
 .page-title {
+  display: flex;
+  gap: 2.4rem;
+  justify-content: space-between;
   padding: 6.4rem;
 
   width: 100%;
@@ -174,6 +177,7 @@ body {
 (max-width: 700px) {
   .page-title {
     padding: 3.2rem 2.4rem;
+    flex-direction: column;
   }
 
   .page-title h2 {
@@ -185,9 +189,17 @@ body {
 (max-width: 1200px) {
   .page-title {
     padding: 3.2rem 3.2rem;
+    flex-direction: column;
   }
 
   .page-title h2 {
     width: 100%;
   }
+}
+
+section .section-title {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
 }

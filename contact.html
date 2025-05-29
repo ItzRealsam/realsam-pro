@@ -41,10 +41,6 @@
   <link rel="stylesheet" href="styles/footer.css" />
   <link rel="stylesheet" href="styles/contact.css" />
 
-  <!-- Linking Javascripts -->
-  <script defer src="scripts/general.js"></script>
-  <script defer src="scripts/contact.js"></script>
-
   <!-- GSAP Core -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 
@@ -53,6 +49,10 @@
 
   <script src="https://unpkg.com/split-type"></script>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- Linking Javascripts -->
+  <script defer src="scripts/general.js"></script>
+  <script defer src="scripts/contact.js"></script>
  
 </head>
 <body>
@@ -347,7 +347,8 @@
               </a>
             </li>
             <li>
-              <a href="contact.html">Contact
+              <a class="current-page"
+                href="contact.html">Contact
                 <div class="indicator"></div>
               </a>
             </li>
@@ -628,134 +629,5 @@
   <!-- Google reCAPTCHA -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-  <script>
-
-    //GSAP ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger)
-
-    const splitTypes = document.querySelectorAll ('.reveal-type-time, .reveal-type-scroll')
-
-    splitTypes.forEach((word,i) => {
-
-      const text = new SplitType(word, { types: 'words'})
-
-      gsap.from(text.words, {
-        scrollTrigger: {
-          trigger: word,
-          start: 'top 80%',
-          end: 'top 20%',
-          scrub: false,
-          markers: false
-        },
-        y:100,
-        opacity: 0.2,
-        stagger: .01
-      })
-
-    })
-
-    /*
-    const splitTypesOnScroll = document.querySelectorAll ('.reveal-type-scroll')
-
-    splitTypesOnScroll.forEach((char,i) => {
-
-      const text = new SplitType(char, { types: 'chars'})
-
-      gsap.from(text.chars, {
-        scrollTrigger: {
-          trigger: char,
-          start: 'top 80%',
-          end: 'top 20%',
-          scrub: false,
-          markers: false
-        },
-        y:100,
-        opacity: 0.2,
-        stagger: 0.1,
-      })
-
-    }) */
-
-    //Contact form animation
-    gsap.from(".form-title", {opacity: 0, y: -20, duration: 0.8});
-    gsap.from("label", {opacity: 0, x: -30, duration: 0.5, stagger: 0.2});
-    gsap.from("input, textarea", {opacity: 0, x: 30, duration: 0.6, stagger: 0.2});
-    gsap.from("button", {opacity: 0, scale: 0.5, duration: 0.5});
-
-
-    // Animate each block in About col-2
-    gsap.utils.toArray(".stat").forEach((block) => {
-      gsap.fromTo(
-        block,
-        { opacity: 0, x: -50 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: block,
-            start: "top 80%",
-            end: "top 60%",
-            scrub: true,
-          },
-        }
-      );
-    });
-
-    // Animate each block in Services col-2
-    gsap.utils.toArray(".service-card").forEach((block) => {
-      gsap.fromTo(
-        block,
-        { opacity: 0, x: 50 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: block,
-            start: "top 80%",
-            end: "top 60%",
-            scrub: true,
-          },
-        }
-      );
-    });
-
-    // Animate each block in Testimonials col-2
-    gsap.utils.toArray(".testimonial-card").forEach((block) => {
-      gsap.fromTo(
-        block,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: block,
-            start: "top 80%",
-            end: "top 60%",
-            scrub: true,
-          },
-        }
-      );
-    });
-
-    // Lenis Basic Setup
-    const lenis = new Lenis()
-
-    lenis.on('scroll', (e) => {
-      console.log(e)
-    })
-
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-
-
-
-  </script>
 </body>
 </html>

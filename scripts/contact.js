@@ -1,5 +1,42 @@
 //CONTACT SECTION
 
+// === Scroll-triggered Animations ===
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // === Animate Section Titles (h3 & h2 with SplitType) ===
+  const revealTextElems = document.querySelectorAll(".reveal-type-time, .reveal-type-scroll");
+
+  revealTextElems.forEach((el) => {
+    const split = new SplitType(el, { types: "words" });
+
+    gsap.fromTo(
+      split.words,
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.02,
+        duration: 0.6,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          end: "bottom 15%",
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
+  });
+
+  //Contact form animation
+  gsap.from(".form-title", {opacity: 0, y: -20, duration: 0.8});
+  gsap.from("label", {opacity: 0, x: -30, duration: 0.5, stagger: 0.2});
+  gsap.from("input, textarea", {opacity: 0, x: 30, duration: 0.6, stagger: 0.2});
+  gsap.from("button", {opacity: 0, scale: 0.5, duration: 0.5});
+
+});
+    
 const form = document.querySelector(".contact-form");
 const inputs = form.querySelectorAll("input, textarea");
 const modal = document.getElementById("thankYouModal");
@@ -135,5 +172,43 @@ gsap.utils.toArray('.faq-card').forEach(card => {
     duration: 0.5,
     ease: "power2.out",
     stagger: 0.1
+  });
+});
+
+// // FAQ Accordion — only one open at a time
+// document.querySelectorAll(".faq-card").forEach((card) => {
+//   const question = card.querySelector(".faq-question");
+
+//   question.addEventListener("click", () => {
+//     // Close all other open cards
+//     document.querySelectorAll(".faq-card").forEach((otherCard) => {
+//       if (otherCard !== card) {
+//         otherCard.classList.remove("faq-card-open");
+//       }
+//     });
+
+//     // Toggle current card
+//     card.classList.toggle("faq-card-open");
+//   });
+// });
+
+// Get all FAQ cards
+const faqCards = document.querySelectorAll(".faq-card");
+
+faqCards.forEach((card) => {
+  const question = card.querySelector(".faq-question");
+
+  question.addEventListener("click", () => {
+    // If the clicked card is already open, close it
+    if (card.classList.contains("faq-card-open")) {
+      card.classList.remove("faq-card-open");
+      return;
+    }
+
+    // Close all cards
+    faqCards.forEach((c) => c.classList.remove("faq-card-open"));
+
+    // Open the clicked card
+    card.classList.add("faq-card-open");
   });
 });
