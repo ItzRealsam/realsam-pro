@@ -1,6 +1,6 @@
 .page404 {
   width: 100%;
-  height: calc(100dvh - 6.4rem);
+  max-height: calc(100dvh - 6.4rem);
 
   display: flex;
   flex-direction: column;

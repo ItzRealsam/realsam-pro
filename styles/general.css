@@ -30,8 +30,9 @@
   --container-max-width: 144rem;
   --border-radius: 0.8rem;
   --icon-size: 24px;
-  --transition-duration: 0.3s;
-  --transition: all 0.3s ease-in-out;
+  --transition-duration: 0.4s;
+  --transition: all 0.4s ease-in-out;
+  --transition-ease: all 0.4s ease;
 
   /* Scroll behavior */
   /* scroll-behavior: smooth; */
@@ -171,6 +172,10 @@ body {
 
 .page-title h2 {
   width: 50%;
+}
+
+.page-title h2 span {
+  font-style: italic;
 }
 
 @media (min-width: 320px) and

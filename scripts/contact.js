@@ -151,64 +151,61 @@ window.addEventListener("keydown", e => {
 
 // FAQ SECTION
 
-// Toggle FAQ open/close
-document.querySelectorAll('.faq-question').forEach(question => {
-  question.addEventListener('click', () => {
-    const card = question.parentElement;
-    card.classList.toggle('open');
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animate FAQ card reveal on scroll
+  gsap.utils.toArray('.faq-card').forEach((card) => {
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: "top 90%",
+        toggleActions: "play none none none",
+      },
+      opacity: 0,
+      y: 40,
+      duration: 0.5,
+      ease: "power2.out",
+      stagger: 0.1
+    });
   });
-});
 
-// Animate each FAQ card into view
-gsap.registerPlugin(ScrollTrigger);
-gsap.utils.toArray('.faq-card').forEach(card => {
-  gsap.from(card, {
-    scrollTrigger: {
-      trigger: card,
-      start: "top 90%",
-    },
-    opacity: 0,
-    y: 40,
-    duration: 0.5,
-    ease: "power2.out",
-    stagger: 0.1
+  // FAQ Accordion logic
+  const faqCards = document.querySelectorAll(".faq-card");
+
+  faqCards.forEach((card, index) => {
+    const question = card.querySelector(".faq-question");
+    const answer = card.querySelector(".faq-answer");
+
+    question.addEventListener("click", () => toggleFAQ(card));
+    question.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggleFAQ(card);
+      }
+    });
   });
-});
 
-// // FAQ Accordion — only one open at a time
-// document.querySelectorAll(".faq-card").forEach((card) => {
-//   const question = card.querySelector(".faq-question");
+  function toggleFAQ(selectedCard) {
+    faqCards.forEach(card => {
+      const question = card.querySelector(".faq-question");
+      const answer = card.querySelector(".faq-answer");
 
-//   question.addEventListener("click", () => {
-//     // Close all other open cards
-//     document.querySelectorAll(".faq-card").forEach((otherCard) => {
-//       if (otherCard !== card) {
-//         otherCard.classList.remove("faq-card-open");
-//       }
-//     });
+      const isSelected = card === selectedCard;
+      const isOpen = card.classList.contains("faq-card-open");
 
-//     // Toggle current card
-//     card.classList.toggle("faq-card-open");
-//   });
-// });
-
-// Get all FAQ cards
-const faqCards = document.querySelectorAll(".faq-card");
-
-faqCards.forEach((card) => {
-  const question = card.querySelector(".faq-question");
-
-  question.addEventListener("click", () => {
-    // If the clicked card is already open, close it
-    if (card.classList.contains("faq-card-open")) {
       card.classList.remove("faq-card-open");
-      return;
-    }
+      question.setAttribute("aria-expanded", "false");
+      answer.setAttribute("aria-hidden", "true");
 
-    // Close all cards
-    faqCards.forEach((c) => c.classList.remove("faq-card-open"));
+      if (!isOpen && isSelected) {
+        card.classList.add("faq-card-open");
+        question.setAttribute("aria-expanded", "true");
+        answer.setAttribute("aria-hidden", "false");
+      }
+    });
+  }
 
-    // Open the clicked card
-    card.classList.add("faq-card-open");
-  });
 });
+
+
