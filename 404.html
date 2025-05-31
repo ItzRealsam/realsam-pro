@@ -40,16 +40,26 @@
   <link rel="stylesheet" href="styles/header.css" />
   <link rel="stylesheet" href="styles/footer.css" />
   <link rel="stylesheet" href="styles/404.css" />
+  
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+
+  <!-- GSAP ScrollTrigger Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
   <!-- Linking Javascripts -->
-  <script defer src="scripts/general.js"></script>  
+  <script defer src="scripts/general.js"></script>
+  <script defer src="scripts/about.js"></script>
  
 </head>
 <body>
 
   <div class="cursor"></div>
 
-  <div class="bg-ellipse"></div>
+  <!-- <div class="bg-ellipse"></div> -->
 
   <!-- SVGs -->
   <svg style="display: none;">
@@ -237,59 +247,5 @@
 
   </div>
 
-  
-
-  <!-- GSAP Core -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-
-  <!-- GSAP ScrollTrigger Plugin -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-
-  <script src="https://unpkg.com/split-type"></script>
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-
-  <script>
-
-    //GSAP ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger)
-
-    const splitTypes = document.querySelectorAll ('.reveal-type')
-
-    splitTypes.forEach((char,i) => {
-
-      const text = new SplitType(char, { types: 'chars'})
-
-      gsap.from(text.chars, {
-        scrollTrigger: {
-          trigger: char,
-          start: 'top 80%',
-          end: 'top 20%',
-          scrub: true,
-          markers: false
-        },
-        y:100,
-        opacity: 0.2,
-        stagger: 0.1
-      })
-
-    })
-
-    // Lenis Basic Setup
-    const lenis = new Lenis()
-
-    lenis.on('scroll', (e) => {
-      console.log(e)
-    })
-
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-
-
-
-  </script>
 </body>
 </html>
