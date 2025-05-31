@@ -1,3 +1,73 @@
+//PAGE TITLE
+/*
+const modal = document.getElementById('resumeModal');
+const openBtn = document.querySelector('.open-resume');
+const closeBtn = modal.querySelector('.close-modal');
+
+openBtn.addEventListener('click', () => {
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden', 'false');
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden', 'true');
+});
+
+// Optional: Close modal when clicking outside iframe
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+}); */
+
+const modal = document.getElementById('resumeModal');
+const modalContent = document.getElementById('resumeContent');
+const openBtn = document.querySelector('.open-resume');
+const closeBtn = modal.querySelector('.close-modal');
+
+// Animate In
+const openModal = () => {
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden', 'false');
+  gsap.fromTo(modalContent, 
+    { y: 100, opacity: 0, scale: 0.95 },
+    { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }
+  );
+};
+
+// Animate Out
+const closeModal = () => {
+  gsap.to(modalContent, {
+    y: 100,
+    opacity: 0,
+    scale: 0.95,
+    duration: 0.4,
+    ease: "power3.in",
+    onComplete: () => {
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+  });
+};
+
+openBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+
+// Close modal on outside click
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('show')) {
+    closeModal();
+  }
+});
 
 
 // EXP SECTION
@@ -17,20 +87,3 @@ gsap.utils.toArray('.exp-card').forEach(card => {
     stagger: 0.1
   });
 });
-
-// // FAQ Accordion — only one open at a time
-// document.querySelectorAll(".faq-card").forEach((card) => {
-//   const question = card.querySelector(".faq-question");
-
-//   question.addEventListener("click", () => {
-//     // Close all other open cards
-//     document.querySelectorAll(".faq-card").forEach((otherCard) => {
-//       if (otherCard !== card) {
-//         otherCard.classList.remove("faq-card-open");
-//       }
-//     });
-
-//     // Toggle current card
-//     card.classList.toggle("faq-card-open");
-//   });
-// });

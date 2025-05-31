@@ -387,23 +387,34 @@
         <h2 class="reveal-type-scroll">
           More than <span>aesthetics...</span>
         </h2>
-        <a href="resume/Resume_SamuelNwaokocha.pdf" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          download 
-          class="btn download-resume">
-          Download Resume
-          <svg class="icon">
-            <use href="#icon-download"></use>
-          </svg>
-        </a>
 
-        <!-- <button class="secondary-btn">
-            Download Resume
-            <svg class="icon">
+        <button class="secondary-btn open-resume">
+            View Resume
+            <!-- <svg class="icon">
               <use href="#icon-download"></use>
-            </svg>
-        </button> -->
+            </svg> -->
+        </button>
+
+        <div class="resume-modal" id="resumeModal" aria-hidden="true">
+          <div class="resume-content">
+            <button class="icon-btn close-modal">
+              <svg class="icon">
+                <use href="#icon-x"></use>
+              </svg>
+            </button>
+            <iframe src="resume/Resume_SamuelNwaokocha.pdf" frameborder="0" title="Resume PDF"></iframe>
+            <a href="resume/Resume_SamuelNwaokocha.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              download 
+              class="btn download-resume">
+              <!-- Download -->
+              <svg class="icon">
+                <use href="#icon-download"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
       </section>
 
       <div class="line"><div></div></div>
