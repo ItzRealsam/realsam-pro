@@ -396,8 +396,6 @@
 
 /* === TESTIMONIALS SECTION === */
 .testimonials {
-  position: relative;
-  
   display: flex;
   align-items: flex-start;
   padding: 6.4rem;
@@ -410,12 +408,15 @@
   flex-direction: column;
   align-self: flex-start;
   gap: 2.4rem;
+
+  
+  border: 1px solid yellow;
 }
 
 @media (min-width: 1024px) {
   .testimonials .col-1 {
     position: sticky;
-    /* top: 12.8rem; */
+    top: 6.4rem;
     height: fit-content;
   }
 }
@@ -441,12 +442,18 @@
   display: flex;
   flex-direction: column;
   gap: 6.4rem;
+
+  border: 1px solid red;
 }
 
 .testimonial-card {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+
+  max-width: 100%;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
 
   /* for the animation*/
   opacity: 0;

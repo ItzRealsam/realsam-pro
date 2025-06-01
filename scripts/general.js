@@ -27,31 +27,55 @@ function raf(time) {
 
 requestAnimationFrame(raf)
 
-//GSAP ScrollTrigger
+// GSAP ScrollTrigger: animate text on enter and reverse on exit
 document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger);
 
-  const splitTypes = document.querySelectorAll ('.reveal-type-time, .reveal-type-scroll')
-
-  splitTypes.forEach((word,i) => {
-
-    const text = new SplitType(word, { types: 'words'})
+  const splitTypes = document.querySelectorAll(".reveal-type-time, .reveal-type-scroll");
+  
+  splitTypes.forEach((element) => {
+    const text = new SplitType(element, { types: "words" });
 
     gsap.from(text.words, {
-      scrollTrigger: {
-        trigger: word,
-        start: 'top 80%',
-        end: 'top 20%',
-        scrub: false,
-        markers: false
-      },
-      y:100,
+      y: 100,
       opacity: 0.2,
-      stagger: .01
-    })
+      stagger: 0.01,
+      ease: "power3.out",
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none none reverse",
+        markers: false,
+      },
+    });
+  });
 
-  })
+  /*
+  const testimonialTitles = document.querySelectorAll('.testimonials .reveal-type-scroll');
+
+  testimonialTitles.forEach((el) => {
+    const splitText = new SplitType(el, { types: 'words' });
+
+    gsap.from(splitText.words, {
+      y: 100,
+      opacity: 0,
+      stagger: 0.05,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: '.testimonials', // pin to entire section
+        start: 'top top',
+        end: 'bottom bottom',
+        toggleActions: "play none none none",
+        scrub: true,
+        // markers: true,
+      }
+    });
+  }); */
+
 });
+
 
 // Connect Lenis and ScrollTrigger
 document.addEventListener("DOMContentLoaded", () => {
@@ -188,3 +212,30 @@ toggleButton.addEventListener("click", () => {
     toggleButton.querySelector('svg').classList.remove('icon-rotate');
   }, 300);
 }); */
+
+/*
+//STICKY SECTIONS
+document.addEventListener("DOMContentLoaded", () => {
+  
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray('.sticky-section').forEach(section => {
+    const col1 = section.querySelector('.col-1');
+    const col2 = section.querySelector('.col-2');
+
+    ScrollTrigger.matchMedia({
+      "(min-width: 1024px)": function () {
+        ScrollTrigger.create({
+          trigger: section,
+          start: "top top",
+          end: () => `+=${col2.scrollHeight - col1.offsetHeight}`,
+          pin: col1,
+          pinSpacing: false,
+          scrub: true,
+        });
+      }
+    });
+  });
+
+});
+*/

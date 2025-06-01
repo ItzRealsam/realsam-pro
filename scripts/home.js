@@ -21,6 +21,7 @@ prevBtn?.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
+  /*
   // === Animate Section Titles (h3 & h2 with SplitType) ===
   const revealTextElems = document.querySelectorAll(".reveal-type-time, .reveal-type-scroll");
 
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       }
     );
-  });
+  }); */
 
   // === About Section Stats Animation ===
   gsap.utils.toArray(".stat").forEach((el) => {
@@ -85,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // === Testimonials Animation ===
-  gsap.utils.toArray(".testimonial-card").forEach((el) => {
+  /*gsap.utils.toArray(".testimonial-card").forEach((el) => {
     gsap.fromTo(
       el,
       { opacity: 0, y: 50 },
@@ -99,6 +100,22 @@ document.addEventListener("DOMContentLoaded", () => {
           end: "top 60%",
           scrub: true,
         },
+      }
+    );
+  }); */
+
+  gsap.utils.toArray(".testimonial-card").forEach(card => {
+    gsap.fromTo(card, 
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: card,
+          start: "top 80%",
+        },
+        duration: 0.6,
+        ease: "power2.out"
       }
     );
   });
