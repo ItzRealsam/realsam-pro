@@ -408,9 +408,6 @@
   flex-direction: column;
   align-self: flex-start;
   gap: 2.4rem;
-
-  
-  border: 1px solid yellow;
 }
 
 @media (min-width: 1024px) {
@@ -442,8 +439,6 @@
   display: flex;
   flex-direction: column;
   gap: 6.4rem;
-
-  border: 1px solid red;
 }
 
 .testimonial-card {
